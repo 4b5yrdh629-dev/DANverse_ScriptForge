@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#111827">
+<title>DANverse ScriptForge</title>
+<style>
+:root{--bg:#0b1120;--panel:#111a2b;--panel2:#172338;--line:#293a53;--ink:#e8f0fc;--muted:#91a4bf;--blue:#91bdff;--blue2:#29456c;--cyan:#b8d7ff;--good:#79dfb0;--warn:#f7cf7a;--bad:#ff929e}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 12% 0%,#20375a 0,transparent 38%),var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input,textarea,select{font:inherit}button{cursor:pointer}.shell{max-width:1120px;margin:auto;padding:0 14px 32px}header{padding:22px 2px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:11px}.logo{height:44px;width:44px;display:grid;place-items:center;border-radius:15px;background:linear-gradient(145deg,#b8d7ff,#5d96eb);color:#102039;font-weight:950;font-size:22px;box-shadow:0 6px 24px #679ce52b}.brand h1{font-size:19px;margin:0;letter-spacing:-.5px}.brand p{font-size:11px;color:var(--muted);margin:4px 0 0}.status{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:8px 10px}.dot{width:7px;height:7px;border-radius:50%;background:var(--warn)}.hero{border:1px solid #344b6b;border-radius:20px;background:linear-gradient(125deg,#192c46,#121c2d 70%);padding:18px;margin-bottom:14px}.eyebrow{font-size:10px;letter-spacing:1.4px;color:var(--blue);font-weight:900}.hero h2{font-size:23px;line-height:1.15;letter-spacing:-.7px;margin:9px 0}.hero p{font-size:13px;line-height:1.55;color:#b4c4d9;margin:0;max-width:620px}.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.chip{font-size:10px;border:1px solid #3b5373;border-radius:999px;padding:6px 9px;color:#c8dcf9;background:#17283e}.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:0 0 13px}.tab{border:1px solid var(--line);background:#111a2b;color:var(--muted);border-radius:12px;padding:11px 5px;font-size:11px;font-weight:800}.tab.active{background:#263f61;border-color:#608bc5;color:#e2efff}.panel{border:1px solid var(--line);background:#111a2b;border-radius:18px;padding:15px;box-shadow:0 14px 40px #00000012}.panel h3{font-size:16px;margin:0 0 5px}.desc{font-size:12px;line-height:1.5;color:var(--muted);margin:0 0 15px}.grid{display:grid;grid-template-columns:1fr;gap:14px}.field{margin:12px 0}.field label{display:block;font-size:11px;font-weight:800;color:#b9cbe2;margin-bottom:7px}.field input,.field textarea,.field select{width:100%;background:#0c1422;border:1px solid #2d405b;border-radius:11px;padding:12px;color:var(--ink);outline:none;font-size:13px}.field textarea{min-height:116px;line-height:1.5;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{border-color:#82b4ff;box-shadow:0 0 0 3px #8bbaff16}.row{display:grid;grid-template-columns:1fr 1fr;gap:9px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.btn{border:0;background:var(--blue);color:#0b1b32;font-size:11px;font-weight:900;border-radius:11px;padding:11px 13px}.btn.secondary{border:1px solid #354c6a;background:#1a2a40;color:#d4e5ff}.btn.ghost{border:1px solid #2d405b;background:transparent;color:#b7c9e2}.btn:disabled{opacity:.55;cursor:wait}.result-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.pill{font-size:10px;font-weight:800;color:#b8d7ff;background:#1b3454;border-radius:999px;padding:6px 8px}.code{white-space:pre-wrap;overflow-wrap:anywhere;background:#070d17;border:1px solid #23354d;border-radius:13px;padding:14px;color:#d9e8ff;font:12px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;min-height:180px;max-height:480px;overflow:auto;margin-top:10px}.answer{white-space:pre-wrap;overflow-wrap:anywhere;background:#0c1422;border:1px solid #293a53;border-radius:13px;padding:13px;line-height:1.6;font-size:13px;min-height:100px;margin-top:10px}.note{font-size:11px;line-height:1.5;color:var(--muted);margin-top:10px}.hidden{display:none!important}.library-grid{display:grid;grid-template-columns:1fr;gap:9px}.libcard{border:1px solid #2b3e59;background:#0d1625;border-radius:13px;padding:13px}.libcard h4{font-size:13px;margin:0 0 6px}.libcard p{font-size:11px;color:var(--muted);line-height:1.5;margin:0 0 10px}.libcard .btn{padding:9px 10px}.diagnostics{display:grid;gap:8px;margin-top:12px}.diag{background:#0c1422;border:1px solid #293a53;border-radius:11px;padding:11px;font-size:12px;line-height:1.5}.diag b{display:block;margin-bottom:4px}.good{color:var(--good)}.warning{color:var(--warn)}.bad{color:var(--bad)}.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#dceaff;color:#12243d;border-radius:999px;padding:10px 14px;font-size:12px;font-weight:800;box-shadow:0 8px 30px #0006;z-index:5;max-width:90vw;text-align:center}.footer{text-align:center;color:#7185a1;font-size:10px;line-height:1.6;padding:20px 5px}
+@media(min-width:780px){.shell{padding:0 22px 40px}.hero{padding:25px}.hero h2{font-size:29px}.panel{padding:20px}.grid{grid-template-columns:1fr 1fr}.library-grid{grid-template-columns:repeat(2,1fr)}.code{max-height:600px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header>
+ <div class="brand"><div class="logo">D</div><div><h1>DANverse ScriptForge</h1><p>Luau AI Studio · Groq powered</p></div></div>
+ <div class="status"><span class="dot" id="statusDot"></span><span id="statusText">Comprobando IA…</span></div>
+</header>
+<section class="hero">
+ <div class="eyebrow">SCRIPTING WORKSPACE / 02.0</div>
+ <h2>Convierte tus ideas en código Luau.</h2>
+ <p>Genera, estudia y revisa scripts con asistencia de IA. Diseñado para móvil, con biblioteca de plantillas y exportación rápida.</p>
+ <div class="chips"><span class="chip">Generador IA</span><span class="chip">Biblioteca</span><span class="chip">Reparador</span><span class="chip">Compatibilidad</span></div>
+</section>
+<nav class="tabs">
+ <button class="tab active" data-tab="generate">Generador</button>
+ <button class="tab" data-tab="library">Biblioteca</button>
+ <button class="tab" data-tab="repair">Reparador</button>
+ <button class="tab" data-tab="compat">Compatibilidad</button>
+</nav>
+
+<section class="panel" id="generate">
+ <h3>Generador con IA</h3><p class="desc">Describe la mecánica y especifica el contexto. La IA devuelve código y notas de instalación.</p>
+ <div class="grid">
+  <div>
+   <div class="field"><label for="category">CATEGORÍA</label><select id="category"><option>Interfaz móvil</option><option>Movimiento y controles</option><option>Herramientas</option><option>Estadísticas y progreso</option><option>Eventos y objetos</option><option>Utilidades de desarrollo</option><option>Otra mecánica</option></select></div>
+   <div class="field"><label for="prompt">¿QUÉ QUIERES CREAR?</label><textarea id="prompt" placeholder="Ejemplo: crea una interfaz móvil azul pastel con un botón que abra un menú de configuración."></textarea></div>
+   <div class="row">
+    <div class="field"><label for="context">CONTEXTO</label><select id="context"><option value="own">Mi propia experiencia / pruebas autorizadas</option><option value="studio">Roblox Studio / Luau estándar</option><option value="delta">Entorno compatible con Delta; APIs variables</option></select></div>
+    <div class="field"><label for="model">MODELO</label><select id="model"><option value="openai/gpt-oss-20b">GPT-OSS 20B</option><option value="openai/gpt-oss-120b">GPT-OSS 120B</option></select></div>
+   </div>
+   <div class="actions"><button class="btn" id="generateBtn">Generar script</button><button class="btn secondary" id="clearPrompt">Limpiar</button></div>
+  </div>
+  <div>
+   <div class="result-head"><h3>Resultado</h3><span class="pill" id="genPill">Esperando instrucciones</span></div>
+   <div id="generated" class="code">Tu código aparecerá aquí.</div>
+   <div class="actions"><button class="btn secondary" id="copyCode">Copiar código</button><button class="btn secondary" id="downloadCode">Exportar .lua</button><button class="btn ghost" id="saveLocal">Guardar en biblioteca</button></div>
+   <div class="note" id="genNote">La IA puede equivocarse. Revisa el código y pruébalo en un entorno autorizado antes de usarlo.</div>
+  </div>
+ </div>
+</section>
+
+<section class="panel hidden" id="library">
+ <h3>Biblioteca de scripts</h3><p class="desc">Plantillas iniciales. Puedes cargar una como punto de partida o guardar tus propias generaciones en este dispositivo.</p>
+ <div class="field"><label for="searchLibrary">BUSCAR EN BIBLIOTECA</label><input id="searchLibrary" placeholder="Buscar por nombre o categoría…"></div>
+ <div id="libraryGrid" class="library-grid"></div>
+ <div class="note">Los elementos guardados se conservan en el almacenamiento local del navegador de este dispositivo.</div>
+</section>
+
+<section class="panel hidden" id="repair">
+ <h3>Reparador con IA</h3><p class="desc">Pega código y describe el error. La IA propondrá una versión corregida y explicará los cambios.</p>
+ <div class="field"><label for="repairCode">CÓDIGO LUAU</label><textarea id="repairCode" style="min-height:190px" placeholder="Pega el código que quieres revisar…"></textarea></div>
+ <div class="field"><label for="repairError">ERROR O COMPORTAMIENTO</label><textarea id="repairError" placeholder="Ejemplo: attempt to index nil with 'Parent', o explica qué no funciona."></textarea></div>
+ <div class="actions"><button class="btn" id="repairBtn">Analizar y reparar</button><button class="btn secondary" id="repairUseGenerated">Usar código del generador</button></div>
+ <div class="result-head" style="margin-top:18px"><h3>Diagnóstico y solución</h3><span class="pill">Groq AI</span></div><div id="repairOut" class="answer">El diagnóstico aparecerá aquí.</div>
+ <div class="actions"><button class="btn secondary" id="copyRepair">Copiar resultado</button></div>
+</section>
+
+<section class="panel hidden" id="compat">
+ <h3>Analizador de compatibilidad</h3><p class="desc">Evalúa ubicación probable, APIs y dependencias. Es una revisión asistida, no una garantía de ejecución.</p>
+ <div class="field"><label for="compatCode">CÓDIGO LUAU</label><textarea id="compatCode" style="min-height:220px" placeholder="Pega el script para analizarlo…"></textarea></div>
+ <div class="actions"><button class="btn" id="compatBtn">Analizar compatibilidad</button><button class="btn secondary" id="compatUseGenerated">Usar código del generador</button></div>
+ <div id="compatOut" class="diagnostics"><div class="diag">Pega un script y pulsa analizar.</div></div>
+</section>
+<footer>DANverse ScriptForge · Integración con Groq · No afiliado a Roblox Corporation.<br>Usa scripts en experiencias propias o pruebas autorizadas. No pegues secretos ni contraseñas en los prompts.</footer>
+</div>
+<div id="toast" class="toast hidden"></div>
+<script>
+const $=id=>document.getElementById(id);
+let lastCode='';
+const starterLibrary=[
+ {id:'mobile-ui',name:'Botón móvil',category:'Interfaz',description:'LocalScript para un TextButton que cambia el texto al pulsarlo.',prompt:'Crea un LocalScript para un TextButton en StarterGui. Al pulsarlo, cambia su texto a “Activado” durante 2 segundos y luego lo restaura. Incluye ubicación y requisitos.'},
+ {id:'leaderstats',name:'Leaderstats básico',category:'Estadísticas',description:'Crea una estadística Score en el jugador desde el servidor.',prompt:'Crea un Script de servidor en ServerScriptService que añada leaderstats y un IntValue Score a cada jugador al entrar. Incluye ubicación y explica cómo probarlo.'},
+ {id:'checkpoint',name:'Checkpoint básico',category:'Objetos',description:'Ejemplo de checkpoint con validación del personaje y debounce.',prompt:'Crea un sistema básico de checkpoint para una experiencia propia de Roblox. Valida el personaje y usa debounce. Explica las limitaciones y dónde colocar cada objeto.'},
+ {id:'tool',name:'Tool activable',category:'Herramientas',description:'Tool sencilla con evento Activated en servidor.',prompt:'Crea un Script básico dentro de una Tool en StarterPack que detecte Activated con debounce y registre la activación. Explica cómo extenderlo de forma segura.'},
+ {id:'speed-pad',name:'Plataforma de velocidad',category:'Movimiento',description:'Parte que da una mejora temporal de velocidad al tocarla.',prompt:'Crea un Script de servidor para una Part que aumente temporalmente WalkSpeed del jugador al tocarla. Añade debounce, valida Humanoid y restaura la velocidad anterior.'},
+ {id:'remote-event',name:'RemoteEvent seguro',category:'Servidor',description:'Ejemplo de comunicación cliente-servidor con validación.',prompt:'Muestra un ejemplo didáctico de RemoteEvent con LocalScript cliente y Script servidor. Valida los argumentos en servidor, limita spam y explica la estructura en Explorer.'}
+];
+function showToast(msg){const t=$('toast');t.textContent=msg;t.classList.remove('hidden');clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>t.classList.add('hidden'),2300)}
+function switchTab(id){document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));['generate','library','repair','compat'].forEach(x=>$(x).classList.toggle('hidden',x!==id))}
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>switchTab(b.dataset.tab)));
+function getSaved(){try{return JSON.parse(localStorage.getItem('danverse_saved')||'[]')}catch(e){return []}}
+function saveSaved(items){try{localStorage.setItem('danverse_saved',JSON.stringify(items))}catch(e){showToast('No se pudo guardar en este navegador')}}
+function renderLibrary(){
+ const q=$('searchLibrary').value.trim().toLowerCase(), all=[...starterLibrary,...getSaved()];
+ const list=all.filter(x=>(x.name+' '+x.category+' '+x.description).toLowerCase().includes(q));
+ const grid=$('libraryGrid');grid.innerHTML='';
+ if(!list.length){grid.innerHTML='<div class="diag">No se encontraron plantillas.</div>';return}
+ list.forEach(item=>{const card=document.createElement('article');card.className='libcard';const h=document.createElement('h4');h.textContent=item.name;const p=document.createElement('p');p.textContent=item.category+' · '+item.description;const b=document.createElement('button');b.className='btn secondary';b.textContent='Usar plantilla';b.addEventListener('click',()=>{$('prompt').value=item.prompt;switchTab('generate');showToast('Plantilla cargada')});card.append(h,p,b);grid.append(card)})
+}
+$('searchLibrary').addEventListener('input',renderLibrary);
+function extractCode(text){
+ const m=text.match(/```(?:lua|luau)?\s*([\s\S]*?)```/i);
+ if(m)return m[1].trim();
+ return text.trim();
+}
+async function callAI(mode,userText,model){
+ const res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({mode,text:userText,model})});
+ let data={};try{data=await res.json()}catch(e){}
+ if(!res.ok)throw new Error(data.error||('Error HTTP '+res.status));
+ if(!data.answer)throw new Error('La respuesta llegó vacía. Inténtalo de nuevo.');
+ return data.answer;
+}
+function setBusy(btn,busy,label){btn.disabled=busy;if(busy){btn.dataset.old=btn.textContent;btn.textContent=label||'Procesando…'}else{btn.textContent=btn.dataset.old||btn.textContent}}
+$('generateBtn').addEventListener('click',async()=>{
+ const prompt=$('prompt').value.trim();if(!prompt){showToast('Describe el script primero');return}
+ const btn=$('generateBtn');setBusy(btn,true,'Generando…');$('genPill').textContent='Conectando con Groq';
+ try{
+  const context=$('context').value,category=$('category').value,model=$('model').value;
+  const answer=await callAI('generate',`Categoría: ${category}\nContexto: ${context}\nSolicitud del usuario:\n${prompt}\n\nEntrega: resumen breve, código Luau en un único bloque ```lua```, ubicación exacta sugerida, dependencias y pasos de prueba. Si el entorno de Delta no ofrece una API, no la inventes: advierte la incertidumbre. Prioriza ejemplos para desarrollo autorizado.`,model);
+  lastCode=extractCode(answer);$('generated').textContent=answer;$('genPill').textContent='Generado';$('genNote').textContent='Revisa el código, la ubicación y las dependencias antes de probarlo.';
+ }catch(e){$('genPill').textContent='Error';$('generated').textContent='No se pudo generar el script.\n\n'+e.message+'\n\nComprueba la conexión, el secreto GROQ_API_KEY y los límites de tu cuenta Groq.';showToast('Error al conectar con Groq')}
+ finally{setBusy(btn,false)}
+});
+$('clearPrompt').addEventListener('click',()=>{$('prompt').value='';$('generated').textContent='Tu código aparecerá aquí.';lastCode='';$('genPill').textContent='Esperando instrucciones'});
+async function copyText(text){try{await navigator.clipboard.writeText(text);showToast('Copiado al portapapeles')}catch(e){showToast('El navegador bloqueó la copia; selecciona el texto manualmente')}}
+$('copyCode').addEventListener('click',()=>{if(lastCode)copyText(lastCode);else copyText($('generated').textContent)});
+$('downloadCode').addEventListener('click',()=>{const code=lastCode||$('generated').textContent;if(!code||code==='Tu código aparecerá aquí.')return;const blob=new Blob([code],{type:'text/plain;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='danverse-script.lua';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)});
+$('saveLocal').addEventListener('click',()=>{const code=lastCode||$('generated').textContent;if(!code||code==='Tu código aparecerá aquí.'){showToast('Genera un script primero');return}const saved=getSaved();saved.unshift({id:'saved-'+Date.now(),name:'Script guardado '+new Date().toLocaleDateString(),category:'Personal',description:code.slice(0,160),prompt:'Mejora o explica este script Luau:\n\n'+code});saveSaved(saved.slice(0,40));renderLibrary();showToast('Guardado en la biblioteca local')});
+$('repairUseGenerated').addEventListener('click',()=>{$('repairCode').value=lastCode||$('generated').textContent;switchTab('repair')});
+$('repairBtn').addEventListener('click',async()=>{
+ const code=$('repairCode').value.trim();if(!code){showToast('Pega código para revisar');return}
+ const btn=$('repairBtn');setBusy(btn,true,'Analizando…');$('repairOut').textContent='La IA está revisando el código…';
+ try{$('repairOut').textContent=await callAI('repair',`Revisa este código Luau. Error o comportamiento reportado: ${$('repairError').value.trim()||'No especificado'}\n\nCódigo:\n${code}\n\nResponde en español con: 1) diagnóstico, 2) lista de problemas confirmados y sospechosos, 3) código corregido en un bloque lua, 4) ubicación y pruebas. No afirmes que ejecutaste el código.`, $('model').value)}
+ catch(e){$('repairOut').textContent='Error: '+e.message;showToast('No se pudo reparar')}
+ finally{setBusy(btn,false)}
+});
+$('copyRepair').addEventListener('click',()=>copyText($('repairOut').textContent));
+$('compatUseGenerated').addEventListener('click',()=>{$('compatCode').value=lastCode||$('generated').textContent;switchTab('compat')});
+$('compatBtn').addEventListener('click',async()=>{
+ const code=$('compatCode').value.trim();if(!code){showToast('Pega código para analizar');return}
+ const btn=$('compatBtn');setBusy(btn,true,'Analizando…');$('compatOut').innerHTML='<div class="diag">Analizando APIs, ubicación y dependencias…</div>';
+ try{const answer=await callAI('compat',`Analiza este script Luau para compatibilidad. No lo ejecutes. Identifica APIs, servicios, eventos, dependencias, contexto probable (servidor/cliente/módulo), posibles problemas y qué no se puede verificar sin ejecutar. Si se menciona Delta, no supongas que todas las APIs están disponibles. Devuelve secciones breves en español.\n\nCódigo:\n${code}`, $('model').value);const d=document.createElement('div');d.className='diag';d.textContent=answer;$('compatOut').innerHTML='';$('compatOut').append(d)}
+ catch(e){$('compatOut').innerHTML='';const d=document.createElement('div');d.className='diag bad';d.textContent='Error: '+e.message;$('compatOut').append(d);showToast('No se pudo analizar')}
+ finally{setBusy(btn,false)}
+});
+async function checkAPI(){try{const r=await fetch('/api/health');const d=await r.json();$('statusDot').style.background=d.configured?'var(--good)':'var(--warn)';$('statusText').textContent=d.configured?'Groq conectado':'Falta configurar la clave'}catch(e){$('statusDot').style.background='var(--warn)';$('statusText').textContent='API sin configurar'}}
+renderLibrary();checkAPI();
+</script>
+</body>
+</html>
